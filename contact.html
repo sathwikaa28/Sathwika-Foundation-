@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Sathwika Foundation</title>
+
+<link rel="icon" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+rel="stylesheet"
+>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #26383b;
+    background: #f8fafb;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    min-height: 76px;
+
+    padding: 9px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(255,255,255,0.97);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom:
+    1px solid rgba(30,70,70,0.08);
+
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.brand-logo {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+.brand-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+.brand-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.15;
+
+}
+
+.brand-name strong {
+
+    color: #253a3d;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+.brand-name span {
+
+    margin-top: 2px;
+
+    color: #2f8986;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.menu-toggle {
+
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+}
+
+.menu-toggle:hover {
+
+    background: #eff8f6;
+
+}
+
+.menu-toggle span {
+
+    width: 25px;
+
+    height: 2px;
+
+    display: block;
+
+    border-radius: 10px;
+
+    background: #2f8986;
+
+    transition: 0.3s;
+
+}
+
+
+/* ACTIVE HAMBURGER */
+
+.menu-toggle.active span:nth-child(1) {
+
+    transform:
+    translateY(7px)
+    rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+.menu-toggle.active span:nth-child(3) {
+
+    transform:
+    translateY(-7px)
+    rotate(-45deg);
+
+}
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links {
+
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 5%;
+
+    width: 235px;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 9px;
+
+    background:
+    rgba(255,255,255,0.98);
+
+    border:
+    1px solid rgba(30,70,70,0.08);
+
+    border-radius: 18px;
+
+    box-shadow:
+    0 18px 50px
+    rgba(30,70,70,0.15);
+
+}
+
+.nav-links.active {
+
+    display: flex;
+
+}
+
+.nav-links a {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 43px;
+
+    padding: 10px 14px;
+
+    color: #526164;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition: 0.2s;
+
+}
+
+.nav-links a:hover {
+
+    color: #2f8986;
+
+    background: #eff8f6;
+
+    transform:
+    translateX(3px);
+
+}
+
+.nav-links a.active {
+
+    color: #2f8986;
+
+    background: #eff8f6;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.contact-hero {
+
+    position: relative;
+
+    min-height: 420px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #245f63,
+        #4e9c96
+    );
+
+    overflow: hidden;
+
+}
+
+
+.contact-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+
+    height: 360px;
+
+    top: -190px;
+
+    left: -100px;
+
+    border-radius: 50%;
+
+    background:
+    rgba(255,255,255,0.07);
+
+}
+
+
+.contact-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    right: -210px;
+
+    bottom: -250px;
+
+    border-radius: 50%;
+
+    background:
+    rgba(255,255,255,0.07);
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+}
+
+
+.hero-icon {
+
+    width: 72px;
+
+    height: 72px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 27px;
+
+    background:
+    rgba(255,255,255,0.12);
+
+    border:
+    1px solid
+    rgba(255,255,255,0.18);
+
+    border-radius: 22px;
+
+}
+
+
+.hero-label {
+
+    margin-bottom: 13px;
+
+    color:
+    rgba(255,255,255,0.75);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.contact-hero h1 {
+
+    margin-bottom: 17px;
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+    font-size:
+    clamp(40px, 6vw, 62px);
+
+    line-height: 1.1;
+
+}
+
+
+.contact-hero h1 span {
+
+    color: #c8eee7;
+
+}
+
+
+.contact-hero p {
+
+    max-width: 620px;
+
+    margin: auto;
+
+    color:
+    rgba(255,255,255,0.82);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.contact-container {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 80px 5%;
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.contact-intro {
+
+    max-width: 700px;
+
+    margin:
+    0 auto 50px;
+
+    text-align: center;
+
+}
+
+
+.section-label {
+
+    margin-bottom: 12px;
+
+    color: #2f8986;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.contact-intro h2 {
+
+    margin-bottom: 15px;
+
+    color: #293b3e;
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+    font-size:
+    clamp(30px, 4vw, 43px);
+
+    line-height: 1.2;
+
+}
+
+
+.contact-intro h2 span {
+
+    color: #2f8986;
+
+}
+
+
+.contact-intro p {
+
+    color: #718083;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =====================================================
+   CONTACT GRID
+===================================================== */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+    0.85fr 1.15fr;
+
+    gap: 28px;
+
+}
+
+
+/* =====================================================
+   CONTACT INFO CARD
+===================================================== */
+
+.contact-info {
+
+    padding: 35px;
+
+    background: white;
+
+    border:
+    1px solid
+    rgba(30,70,70,0.06);
+
+    border-radius: 22px;
+
+    box-shadow:
+    0 15px 45px
+    rgba(30,70,70,0.07);
+
+}
+
+
+.contact-info h2 {
+
+    margin-bottom: 12px;
+
+    color: #304245;
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+    font-size: 28px;
+
+}
+
+
+.contact-info > p {
+
+    margin-bottom: 28px;
+
+    color: #718083;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =====================================================
+   INFO ITEM
+===================================================== */
+
+.info-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+
+    padding: 15px;
+
+    background: #f5faf9;
+
+    border-radius: 14px;
+
+}
+
+
+.info-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #2f8986;
+
+    background: white;
+
+    border-radius: 12px;
+
+}
+
+
+.info-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.info-text small {
+
+    margin-bottom: 2px;
+
+    color: #8a9899;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.info-text a,
+
+.info-text span {
+
+    color: #3d5052;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.info-text a:hover {
+
+    color: #2f8986;
+
+}
+
+
+/* =====================================================
+   WHATSAPP BUTTON
+===================================================== */
+
+.whatsapp-btn {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding:
+    13px 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color: white;
+
+    background: #25D366;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+
+}
+
+
+.whatsapp-btn:hover {
+
+    transform:
+    translateY(-2px);
+
+    background: #1ebe5d;
+
+}
+
+
+/* =====================================================
+   CONTACT FORM CARD
+===================================================== */
+
+.contact-form-box {
+
+    padding: 35px;
+
+    background: white;
+
+    border:
+    1px solid
+    rgba(30,70,70,0.06);
+
+    border-radius: 22px;
+
+    box-shadow:
+    0 15px 45px
+    rgba(30,70,70,0.07);
+
+}
+
+
+.contact-form-box h2 {
+
+    margin-bottom: 10px;
+
+    color: #304245;
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+    font-size: 28px;
+
+}
+
+
+.contact-form-box > p {
+
+    margin-bottom: 25px;
+
+    color: #718083;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.contact-form label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #526164;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.contact-form input,
+
+.contact-form textarea {
+
+    width: 100%;
+
+    padding:
+    13px 14px;
+
+    margin-bottom: 18px;
+
+    color: #304245;
+
+    background: #fafcfc;
+
+    border:
+    1px solid
+    #e1e9e8;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+
+}
+
+
+.contact-form input:focus,
+
+.contact-form textarea:focus {
+
+    border-color: #72b7ad;
+
+    background: white;
+
+    box-shadow:
+    0 0 0 3px
+    rgba(47,137,134,0.08);
+
+}
+
+
+.contact-form textarea {
+
+    min-height: 150px;
+
+    resize: vertical;
+
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.submit-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    color: white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2f8986,
+        #4e9c96
+    );
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.submit-btn:hover {
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 8px 20px
+    rgba(47,137,134,0.20);
+
+}
+
+
+/* =====================================================
+   EXTRA SECTION
+===================================================== */
+
+.extra {
+
+    padding:
+    65px 20px;
+
+    text-align: center;
+
+    background:
+    #eff8f6;
+
+}
+
+
+.extra-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin:
+    0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #2f8986;
+
+    background: white;
+
+    border-radius: 18px;
+
+}
+
+
+.extra h2 {
+
+    margin-bottom: 10px;
+
+    color: #293b3e;
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+    font-size: 30px;
+
+}
+
+
+.extra p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #718083;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    color: white;
+
+    background: #182629;
+
+}
+
+
+.footer-main {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+    55px 5% 35px;
+
+    display: grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap: 50px;
+
+}
+
+
+.footer-brand {
+
+    max-width: 420px;
+
+}
+
+
+.footer-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.footer-logo-image {
+
+    width: 62px;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.footer-logo-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+.footer-brand .brand-name strong {
+
+    color: white;
+
+}
+
+
+.footer-brand .brand-name span {
+
+    color: #8ed6c7;
+
+}
+
+
+.footer-brand p {
+
+    max-width: 400px;
+
+    margin-top: 17px;
+
+    color:
+    rgba(255,255,255,0.52);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap:
+    12px 24px;
+
+}
+
+
+.footer-links a {
+
+    color:
+    rgba(255,255,255,0.65);
+
+    font-size: 11px;
+
+}
+
+
+.footer-links a:hover {
+
+    color: white;
+
+}
+
+
+.footer-bottom {
+
+    padding: 17px;
+
+    text-align: center;
+
+    color:
+    rgba(255,255,255,0.4);
+
+    font-size: 10px;
+
+    border-top:
+    1px solid
+    rgba(255,255,255,0.08);
+
+}
+
+
+/* =====================================================
+   FLOATING WHATSAPP
+===================================================== */
+
+.whatsapp {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    z-index: 2000;
+
+    width: 56px;
+
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 23px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    border:
+    3px solid
+    rgba(255,255,255,0.9);
+
+    box-shadow:
+    0 8px 22px
+    rgba(0,0,0,0.16);
+
+    transition: 0.2s;
+
+}
+
+
+.whatsapp:hover {
+
+    transform:
+    translateY(-4px)
+    scale(1.06);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+
+    .navbar {
+
+        min-height: 68px;
+
+        padding:
+        7px 18px;
+
+    }
+
+
+    .brand-logo {
+
+        width: 50px;
+
+        height: 50px;
+
+    }
+
+
+    .brand-name strong {
+
+        font-size: 16px;
+
+    }
+
+
+    .brand-name span {
+
+        font-size: 9px;
+
+    }
+
+
+    .nav-links {
+
+        top:
+        calc(100% + 8px);
+
+        right: 15px;
+
+        width:
+        min(
+            235px,
+            calc(100vw - 30px)
+        );
+
+    }
+
+
+    .contact-hero {
+
+        min-height: 360px;
+
+        padding:
+        60px 22px;
+
+    }
+
+
+    .contact-hero h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .contact-container {
+
+        padding:
+        65px 20px;
+
+    }
+
+
+    .contact-grid {
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+
+    .contact-info,
+
+    .contact-form-box {
+
+        padding:
+        28px 22px;
+
+    }
+
+
+    .footer-main {
+
+        grid-template-columns:
+        1fr;
+
+        padding:
+        45px 20px 30px;
+
+        gap: 30px;
+
+    }
+
+
+    .footer-links {
+
+        justify-content:
+        flex-start;
+
+    }
+
+
+    .whatsapp {
+
+        width: 52px;
+
+        height: 52px;
+
+        right: 16px;
+
+        bottom: 16px;
+
+        font-size: 21px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+
+    <!-- BRAND -->
+
+    <a
+    href="index.html"
+    class="brand"
+    >
+
+        <div class="brand-logo">
+
+            <img
+            src="logo.png"
+            alt="Sathwika Foundation Logo"
+            >
+
+        </div>
+
+
+        <div class="brand-name">
+
+            <strong>
+                Sathwika Foundation
+            </strong>
+
+            <span>
+                Serving with compassion
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- HAMBURGER -->
+
+    <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Open navigation menu"
+    >
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </button>
+
+
+    <!-- NAVIGATION -->
+
+    <div
+    class="nav-links"
+    id="navLinks"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contribute.html">
+            Contribute
+        </a>
+
+        <a
+        href="contact.html"
+        class="active"
+        >
+            Contact
+        </a>
+
+        <a href="policy.html">
+            Policy
+        </a>
+
+        <a href="help.html">
+            Get Help
+        </a>
+
+        <a href="blood.html">
+            Blood Donation
+        </a>
+        
+        <a href="./gallery.html">
+            Gallery
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="contact-hero">
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-icon">
+
+            <i class="fa-solid fa-envelope"></i>
+
+        </div>
+
+
+        <div class="hero-label">
+
+            GET IN TOUCH
+
+        </div>
+
+
+        <h1>
+
+            Contact
+
+            <span>
+                Us
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Have a question, want to contribute,
+            or simply wish to connect with us?
+
+            We would be happy to hear from you.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="contact-container">
+
+
+    <!-- INTRO -->
+
+    <section class="contact-intro">
+
+
+        <div class="section-label">
+
+            WE'D LOVE TO HEAR FROM YOU
+
+        </div>
+
+
+        <h2>
+
+            Let's
+
+            <span>
+                connect
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Whether you have a question about
+            Sathwika Foundation, want to support
+            our initiatives, or simply want to
+            reach out, feel free to contact us.
+
+        </p>
+
+
+    </section>
+
+
+    <!-- CONTACT GRID -->
+
+    <div class="contact-grid">
+
+
+        <!-- =================================================
+             CONTACT INFORMATION
+        ================================================== -->
+
+        <section class="contact-info">
+
+
+            <h2>
+
+                Get in Touch
+
+            </h2>
+
+
+            <p>
+
+                You can contact us directly using
+                the details below. We will try our
+                best to respond as soon as possible.
+
+            </p>
+
+
+            <!-- EMAIL -->
+
+            <div class="info-item">
+
+
+                <div class="info-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+
+                <div class="info-text">
+
+                    <small>
+                        Email
+                    </small>
+
+                    <a
+                    href="mailto:sathwikaa28@gmail.com"
+                    >
+
+                        sathwikaa28@gmail.com
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="info-item">
+
+
+                <div class="info-icon">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </div>
+
+
+                <div class="info-text">
+
+                    <small>
+                        Phone
+                    </small>
+
+                    <a
+                    href="tel:+919030606322"
+                    >
+
+                        9030606322
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+            href="https://wa.me/919030606322"
+            class="whatsapp-btn"
+            target="_blank"
+            rel="noopener"
+            >
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Chat with us on WhatsApp
+
+            </a>
+
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT FORM
+        ================================================== -->
+
+        <section class="contact-form-box">
+
+
+            <h2>
+
+                Send Us a Message
+
+            </h2>
+
+
+            <p>
+
+                Have something to tell us?
+
+                Fill out the form below and
+                send us your message.
+
+            </p>
+
+
+            <form
+            class="contact-form"
+            action="https://formspree.io/f/xzdkbjoo"
+            method="POST"
+            >
+
+
+                <input
+                type="hidden"
+                name="_subject"
+                value="New Message from Sathwika Foundation"
+                >
+
+
+                <!-- NAME -->
+
+                <label for="name">
+
+                    Your Name
+
+                </label>
+
+
+                <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+                >
+
+
+                <!-- EMAIL -->
+
+                <label for="email">
+
+                    Your Email
+
+                </label>
+
+
+                <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+                >
+
+
+                <!-- MESSAGE -->
+
+                <label for="message">
+
+                    Your Message
+
+                </label>
+
+
+                <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message here..."
+                required
+                ></textarea>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                type="submit"
+                class="submit-btn"
+                >
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    &nbsp;
+
+                    Send Message
+
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+    </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     EXTRA SECTION
+===================================================== -->
+
+<section class="extra">
+
+
+
+
+    <h2>
+
+        Thank You for Reaching Out 
+
+    </h2>
+
+
+    <p>
+
+        Every message matters.
+
+        Thank you for taking the time to
+        connect with Sathwika Foundation.
+
+    </p>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-main">
+
+
+        <!-- FOOTER BRAND -->
+
+        <div class="footer-brand">
+
+
+            <a
+            href="index.html"
+            class="footer-logo"
+            >
+
+
+                <div class="footer-logo-image">
+
+                    <img
+                    src="logo.png"
+                    alt="Sathwika Foundation Logo"
+                    >
+
+                </div>
+
+
+                <div class="brand-name">
+
+
+                    <strong>
+
+                        Sathwika Foundation
+
+                    </strong>
+
+
+                    <span>
+
+                        Serving with compassion
+
+                    </span>
+
+
+                </div>
+
+
+            </a>
+
+
+            <p>
+
+                A compassionate initiative focused
+                on education, food assistance, and
+                community care.
+
+                Together, we can help build
+                a better future.
+
+            </p>
+
+
+        </div>
+
+
+        <!-- FOOTER LINKS -->
+
+        <div class="footer-links">
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="about.html">
+                About
+            </a>
+
+
+            <a href="contribute.html">
+                Contribute
+            </a>
+
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+
+            <a href="policy.html">
+                Policy
+            </a>
+
+
+            <a href="help.html">
+                Get Help
+            </a>
+
+
+            <a href="blood.html">
+                Blood Donation
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Sathwika Foundation.
+        All Rights Reserved.
+
+    </div>
+
+
+</footer>
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a
+href="https://wa.me/919030606322"
+class="whatsapp"
+target="_blank"
+rel="noopener"
+aria-label="Chat with Sathwika Foundation on WhatsApp"
+>
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+const menuToggle =
+document.getElementById(
+    "menuToggle"
+);
+
+
+const navLinks =
+document.getElementById(
+    "navLinks"
+);
+
+
+/* OPEN / CLOSE MENU */
+
+menuToggle.addEventListener(
+    "click",
+    function(event) {
+
+
+        event.stopPropagation();
+
+
+        navLinks.classList.toggle(
+            "active"
+        );
+
+
+        menuToggle.classList.toggle(
+            "active"
+        );
+
+
+    }
+);
+
+
+/* CLOSE AFTER LINK CLICK */
+
+navLinks
+.querySelectorAll("a")
+.forEach(
+    function(link) {
+
+
+        link.addEventListener(
+            "click",
+            function() {
+
+
+                navLinks.classList.remove(
+                    "active"
+                );
+
+
+                menuToggle.classList.remove(
+                    "active"
+                );
+
+
+            }
+        );
+
+
+    }
+);
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+
+        if (
+            !navLinks.contains(
+                event.target
+            ) &&
+            !menuToggle.contains(
+                event.target
+            )
+        ) {
+
+
+            navLinks.classList.remove(
+                "active"
+            );
+
+
+            menuToggle.classList.remove(
+                "active"
+            );
+
+
+        }
+
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>

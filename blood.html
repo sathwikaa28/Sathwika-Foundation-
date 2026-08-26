@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Blood Donation | Sathwika Foundation</title>
+
+<link rel="icon" href="logo.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #26383b;
+    background: #f8fafb;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 76px;
+
+    padding: 9px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255,255,255,0.97);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid rgba(30,70,70,0.08);
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.15;
+}
+
+.brand-name strong {
+    color: #253a3d;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand-name span {
+    margin-top: 2px;
+
+    color: #2f8986;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.menu-toggle {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease;
+}
+
+.menu-toggle:hover {
+    background: #eff8f6;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+
+    display: block;
+
+    border-radius: 10px;
+
+    background: #2f8986;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* Hamburger X */
+
+.menu-toggle.active span:nth-child(1) {
+    transform:
+        translateY(7px)
+        rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+}
+
+
+/* =====================================================
+   NAV MENU
+===================================================== */
+
+.nav-links {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 5%;
+
+    width: 235px;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 9px;
+
+    background:
+        rgba(255,255,255,0.98);
+
+    border:
+        1px solid rgba(30,70,70,0.08);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 50px
+        rgba(30,70,70,0.15);
+
+    backdrop-filter: blur(15px);
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+
+    min-height: 43px;
+
+    padding: 10px 14px;
+
+    color: #526164;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #2f8986;
+
+    background: #eff8f6;
+
+    transform:
+        translateX(3px);
+}
+
+.nav-links a.active {
+    color: #c6283d;
+
+    background: #fff1f3;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.page-hero {
+    position: relative;
+
+    min-height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9e2439,
+            #d64a5c
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.page-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    top: -180px;
+    left: -110px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+.page-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    right: -190px;
+    bottom: -230px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+}
+
+.hero-label {
+    margin-bottom: 14px;
+
+    color: #ffd8dd;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.hero-icon {
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 30px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.18);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(10px);
+}
+
+.hero-content h1 {
+    margin-bottom: 18px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(42px, 6vw, 68px);
+
+    line-height: 1.1;
+}
+
+.hero-content h1 span {
+    color: #ffdce1;
+}
+
+.hero-content p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color:
+        rgba(255,255,255,0.82);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.blood-main {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding:
+        85px 5%;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.blood-intro {
+    max-width: 800px;
+
+    margin:
+        0 auto 45px;
+
+    text-align: center;
+}
+
+.section-label {
+    margin-bottom: 12px;
+
+    color: #c6283d;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.blood-intro h2 {
+    margin-bottom: 18px;
+
+    color: #293b3e;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(30px, 4vw, 44px);
+
+    line-height: 1.2;
+}
+
+.blood-intro h2 span {
+    color: #c6283d;
+}
+
+.blood-intro p {
+    color: #718083;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   COMMITMENT CARD
+===================================================== */
+
+.commitment-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+
+    padding:
+        35px;
+
+    background: white;
+
+    border:
+        1px solid
+        rgba(30,70,70,0.06);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(30,70,70,0.07);
+}
+
+.commitment-icon {
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #c6283d;
+
+    font-size: 23px;
+
+    background: #fff1f3;
+
+    border-radius: 17px;
+}
+
+.commitment-content h2 {
+    margin-bottom: 10px;
+
+    color: #304245;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 26px;
+}
+
+.commitment-content p {
+    color: #718083;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   DONOR SECTION
+===================================================== */
+
+.donor-card {
+    padding:
+        42px;
+
+    background: white;
+
+    border:
+        1px solid
+        rgba(30,70,70,0.06);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 18px 50px
+        rgba(30,70,70,0.08);
+}
+
+.donor-heading {
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+.donor-heading h2 {
+    margin-bottom: 8px;
+
+    color: #304245;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 32px;
+}
+
+.donor-heading p {
+    color: #718083;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.donor-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column:
+        1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+
+    color: #435457;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: #c6283d;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding:
+        13px 15px;
+
+    color: #304245;
+
+    background: #f8fafb;
+
+    border:
+        1px solid
+        #e1e7e8;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    background: white;
+
+    border-color:
+        #c6283d;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(198,40,61,0.08);
+}
+
+.form-group input::placeholder {
+    color: #a3adaf;
+}
+
+
+/* =====================================================
+   REGISTER BUTTON
+===================================================== */
+
+.btn-wrapper {
+    grid-column:
+        1 / -1;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 8px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        13px 28px;
+
+    color: white;
+
+    background:
+        #c6283d;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px
+        rgba(198,40,61,0.18);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    background:
+        #a91f34;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(198,40,61,0.24);
+}
+
+
+/* =====================================================
+   URGENT BLOOD CTA
+===================================================== */
+
+.urgent-card {
+    position: relative;
+
+    margin-top: 30px;
+
+    padding:
+        40px 35px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9e2439,
+            #d64a5c
+        );
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px
+        rgba(198,40,61,0.14);
+}
+
+.urgent-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    right: -100px;
+    top: -130px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+.urgent-card h2 {
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 10px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 30px;
+}
+
+.urgent-card p {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 22px;
+
+    color:
+        rgba(255,255,255,0.80);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.urgent-btn {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        12px 23px;
+
+    color: #9e2439;
+
+    background: white;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.urgent-btn:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    color: white;
+
+    background: #182629;
+}
+
+.footer-main {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        55px 5% 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-brand {
+    max-width: 420px;
+}
+
+.footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.footer-logo-image {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.footer-logo-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.footer-brand .brand-name strong {
+    color: white;
+}
+
+.footer-brand .brand-name span {
+    color: #8ed6c7;
+}
+
+.footer-brand p {
+    max-width: 400px;
+
+    margin-top: 17px;
+
+    color:
+        rgba(255,255,255,0.52);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap:
+        12px 24px;
+}
+
+.footer-links a {
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 11px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    padding: 17px;
+
+    text-align: center;
+
+    color:
+        rgba(255,255,255,0.4);
+
+    font-size: 10px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 2000;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 23px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    border:
+        3px solid
+        rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 8px 22px
+        rgba(0,0,0,0.16),
+
+        0 0 0 5px
+        rgba(37,211,102,0.10);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.whatsapp:hover {
+    transform:
+        translateY(-4px)
+        scale(1.06);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,0.20),
+
+        0 0 0 7px
+        rgba(37,211,102,0.12);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 68px;
+
+        padding:
+            7px 18px;
+    }
+
+    .brand-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .brand-name strong {
+        font-size: 16px;
+    }
+
+    .brand-name span {
+        font-size: 9px;
+    }
+
+
+    .nav-links {
+        top:
+            calc(100% + 8px);
+
+        right:
+            15px;
+
+        width:
+            min(235px, calc(100vw - 30px));
+    }
+
+
+    .page-hero {
+        min-height: 340px;
+
+        padding:
+            60px 22px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+
+    .blood-main {
+        padding:
+            70px 20px;
+    }
+
+
+    .commitment-card {
+        flex-direction: column;
+
+        padding:
+            28px 24px;
+    }
+
+
+    .donor-card {
+        padding:
+            28px 20px;
+    }
+
+
+    .donor-form {
+        grid-template-columns:
+            1fr;
+    }
+
+    .form-group.full-width {
+        grid-column:
+            auto;
+    }
+
+    .btn-wrapper {
+        grid-column:
+            auto;
+    }
+
+
+    .footer-main {
+        grid-template-columns:
+            1fr;
+
+        padding:
+            45px 20px 30px;
+
+        gap:
+            30px;
+    }
+
+    .footer-links {
+        justify-content:
+            flex-start;
+    }
+
+
+    .whatsapp {
+        width: 52px;
+        height: 52px;
+
+        right: 16px;
+        bottom: 16px;
+
+        font-size: 21px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .brand-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .brand-name strong {
+        font-size: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="brand">
+
+        <div class="brand-logo">
+
+            <img
+                src="logo.png"
+                alt="Sathwika Foundation Logo"
+            >
+
+        </div>
+
+        <div class="brand-name">
+
+            <strong>
+                Sathwika Foundation
+            </strong>
+
+            <span>
+                Serving with compassion
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- HAMBURGER -->
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <!-- NAVIGATION -->
+
+    <div
+        class="nav-links"
+        id="navLinks"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contribute.html">
+            Contribute
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="policy.html">
+            Policy
+        </a>
+
+        <a href="help.html">
+            Get Help
+        </a>
+
+        <a
+            href="blood.html"
+            class="active"
+        >
+            Blood Donation
+        </a>
+        
+        <a href="./gallery.html">
+            Gallery
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">
+
+            <i class="fa-solid fa-droplet"></i>
+
+        </div>
+
+        <div class="hero-label">
+            BLOOD SUPPORT
+        </div>
+
+        <h1>
+            Blood
+            <span>Donation</span>
+        </h1>
+
+        <p>
+            Be the reason someone gets the support
+            they need when it matters most.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="blood-main">
+
+
+    <!-- INTRO -->
+
+    <section class="blood-intro">
+
+        <div class="section-label">
+            SAVE LIVES TOGETHER
+        </div>
+
+        <h2>
+            Every donor can make
+            <span>a difference</span>
+        </h2>
+
+        <p>
+            Timely blood support can be incredibly important
+            during emergency situations. Through our members
+            and volunteers, Sathwika Foundation aims to help
+            connect people in need with available blood donors.
+        </p>
+
+    </section>
+
+
+    <!-- COMMITMENT -->
+
+    <section class="commitment-card">
+
+        <div class="commitment-icon">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </div>
+
+        <div class="commitment-content">
+
+            <h2>
+                Our Commitment
+            </h2>
+
+            <p>
+                Sathwika Foundation is committed to saving lives
+                through timely blood support. Our members and
+                volunteers are always ready to donate blood and
+                help individuals in need during emergency
+                situations.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DONOR FORM -->
+
+    <section class="donor-card">
+
+        <div class="donor-heading">
+
+            <div class="section-label">
+                BECOME A DONOR
+            </div>
+
+            <h2>
+                Register as a Blood Donor
+            </h2>
+
+            <p>
+                Share your details with us so we can reach
+                you when your blood group may be needed.
+            </p>
+
+        </div>
+
+
+        <form
+            class="donor-form"
+            action="https://formspree.io/f/xzdkbjoo"
+            method="POST"
+        >
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+            </div>
+
+
+            <!-- BLOOD GROUP -->
+
+            <div class="form-group">
+
+                <label for="bloodgroup">
+                    Blood Group
+                    <span>*</span>
+                </label>
+
+                <select
+                    id="bloodgroup"
+                    name="bloodgroup"
+                    required
+                >
+
+                    <option value="">
+                        Select Blood Group
+                    </option>
+
+                    <option value="A+">
+                        A+
+                    </option>
+
+                    <option value="A-">
+                        A-
+                    </option>
+
+                    <option value="B+">
+                        B+
+                    </option>
+
+                    <option value="B-">
+                        B-
+                    </option>
+
+                    <option value="O+">
+                        O+
+                    </option>
+
+                    <option value="O-">
+                        O-
+                    </option>
+
+                    <option value="AB+">
+                        AB+
+                    </option>
+
+                    <option value="AB-">
+                        AB-
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="form-group">
+
+                <label for="location">
+                    Your Location
+                    <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="City / Area"
+                    required
+                >
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <div class="btn-wrapper">
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    Register as Donor
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+    <!-- URGENT HELP -->
+
+    <section class="urgent-card">
+
+        <h2>
+            Need Blood Urgently?
+        </h2>
+
+        <p>
+            If you or someone you know is in urgent need
+            of blood, please contact us immediately.
+            We will try our best to connect you with
+            available donors as quickly as possible.
+        </p>
+
+        <a
+            href="contact.html"
+            class="urgent-btn"
+        >
+
+            <i class="fa-solid fa-phone"></i>
+
+            Contact Us
+
+        </a>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <!-- FOOTER BRAND -->
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="footer-logo"
+            >
+
+                <div class="footer-logo-image">
+
+                    <img
+                        src="logo.png"
+                        alt="Sathwika Foundation Logo"
+                    >
+
+                </div>
+
+                <div class="brand-name">
+
+                    <strong>
+                        Sathwika Foundation
+                    </strong>
+
+                    <span>
+                        Serving with compassion
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <p>
+                A compassionate initiative focused on
+                education, food assistance, and community care.
+                Together, we can help build a better future.
+            </p>
+
+        </div>
+
+
+        <!-- FOOTER LINKS -->
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contribute.html">
+                Contribute
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="policy.html">
+                Policy
+            </a>
+
+            <a href="help.html">
+                Get Help
+            </a>
+
+            <a href="blood.html">
+                Blood Donation
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Sathwika Foundation.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+<a
+    href="https://wa.me/"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with Sathwika Foundation on WhatsApp"
+>
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+/* OPEN / CLOSE MENU */
+
+menuToggle.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        navLinks.classList.toggle("active");
+
+        menuToggle.classList.toggle("active");
+
+        const isOpen =
+            navLinks.classList.contains("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    }
+);
+
+
+/* CLOSE AFTER CLICKING LINK */
+
+navLinks
+    .querySelectorAll("a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                navLinks.classList.remove(
+                    "active"
+                );
+
+                menuToggle.classList.remove(
+                    "active"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+    });
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const clickedInsideMenu =
+            navLinks.contains(event.target);
+
+        const clickedButton =
+            menuToggle.contains(event.target);
+
+        if (
+            !clickedInsideMenu &&
+            !clickedButton
+        ) {
+
+            navLinks.classList.remove(
+                "active"
+            );
+
+            menuToggle.classList.remove(
+                "active"
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
