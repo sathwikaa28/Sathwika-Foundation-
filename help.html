@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +26,6 @@ rel="stylesheet"
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
-
 
 <style>
 
@@ -62,32 +62,18 @@ a {
 ===================================================== */
 
 .navbar {
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
-
     width: 100%;
-
     min-height: 76px;
-
     padding: 9px 5%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     background: rgba(255,255,255,0.97);
-
     backdrop-filter: blur(14px);
-
-    border-bottom:
-    1px solid rgba(30,70,70,0.08);
-
+    border-bottom: 1px solid rgba(30,70,70,0.08);
 }
 
 
@@ -96,77 +82,46 @@ a {
 ===================================================== */
 
 .brand {
-
     display: flex;
-
     align-items: center;
-
     gap: 12px;
-
 }
 
 .brand-logo {
-
     width: 58px;
-
     height: 58px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     overflow: hidden;
-
 }
 
 .brand-logo img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: contain;
-
     display: block;
-
 }
 
 .brand-name {
-
     display: flex;
-
     flex-direction: column;
-
     line-height: 1.15;
-
 }
 
 .brand-name strong {
-
     color: #253a3d;
-
     font-size: 18px;
-
     font-weight: 700;
-
 }
 
 .brand-name span {
-
     margin-top: 2px;
-
     color: #2f8986;
-
     font-size: 10px;
-
     font-weight: 600;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
-
 }
 
 
@@ -175,76 +130,42 @@ a {
 ===================================================== */
 
 .menu-toggle {
-
     width: 46px;
-
     height: 46px;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 5px;
-
     border: none;
-
     border-radius: 12px;
-
     background: transparent;
-
     cursor: pointer;
-
 }
 
 .menu-toggle:hover {
-
     background: #eff8f6;
-
 }
 
 .menu-toggle span {
-
     width: 25px;
-
     height: 2px;
-
     display: block;
-
     border-radius: 10px;
-
     background: #2f8986;
-
     transition: 0.3s;
-
 }
 
-
-/* ACTIVE HAMBURGER */
-
 .menu-toggle.active span:nth-child(1) {
-
-    transform:
-    translateY(7px)
-    rotate(45deg);
-
+    transform: translateY(7px) rotate(45deg);
 }
 
 .menu-toggle.active span:nth-child(2) {
-
     opacity: 0;
-
 }
 
 .menu-toggle.active span:nth-child(3) {
-
-    transform:
-    translateY(-7px)
-    rotate(-45deg);
-
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 
@@ -253,84 +174,46 @@ a {
 ===================================================== */
 
 .nav-links {
-
     position: absolute;
-
     top: calc(100% + 10px);
-
     right: 5%;
-
     width: 235px;
-
     display: none;
-
     flex-direction: column;
-
     gap: 4px;
-
     padding: 9px;
-
-    background:
-    rgba(255,255,255,0.98);
-
-    border:
-    1px solid rgba(30,70,70,0.08);
-
+    background: rgba(255,255,255,0.98);
+    border: 1px solid rgba(30,70,70,0.08);
     border-radius: 18px;
-
-    box-shadow:
-    0 18px 50px
-    rgba(30,70,70,0.15);
-
+    box-shadow: 0 18px 50px rgba(30,70,70,0.15);
 }
 
 .nav-links.active {
-
     display: flex;
-
 }
 
 .nav-links a {
-
     display: flex;
-
     align-items: center;
-
     min-height: 43px;
-
     padding: 10px 14px;
-
     color: #526164;
-
     border-radius: 11px;
-
     font-size: 13px;
-
     font-weight: 500;
-
     transition: 0.2s;
-
 }
 
 .nav-links a:hover {
-
     color: #2f8986;
-
     background: #eff8f6;
-
-    transform:
-    translateX(3px);
-
+    transform: translateX(3px);
 }
 
 .nav-links a.active {
-
     color: #2f8986;
-
     background: #eff8f6;
-
     font-weight: 700;
-
 }
 
 
@@ -339,174 +222,86 @@ a {
 ===================================================== */
 
 .help-hero {
-
     position: relative;
-
     min-height: 420px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 70px 20px;
-
     text-align: center;
-
     color: white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #245f63,
-        #4e9c96
-    );
-
+    background: linear-gradient(135deg,#245f63,#4e9c96);
     overflow: hidden;
-
 }
-
 
 .help-hero::before {
-
     content: "";
-
     position: absolute;
-
     width: 360px;
-
     height: 360px;
-
     top: -190px;
-
     left: -100px;
-
     border-radius: 50%;
-
-    background:
-    rgba(255,255,255,0.07);
-
+    background: rgba(255,255,255,0.07);
 }
-
 
 .help-hero::after {
-
     content: "";
-
     position: absolute;
-
     width: 450px;
-
     height: 450px;
-
     right: -210px;
-
     bottom: -250px;
-
     border-radius: 50%;
-
-    background:
-    rgba(255,255,255,0.07);
-
+    background: rgba(255,255,255,0.07);
 }
-
 
 .hero-content {
-
     position: relative;
-
     z-index: 2;
-
     max-width: 750px;
-
 }
-
 
 .hero-icon {
-
     width: 72px;
-
     height: 72px;
-
     margin: 0 auto 20px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     color: white;
-
     font-size: 27px;
-
-    background:
-    rgba(255,255,255,0.12);
-
-    border:
-    1px solid
-    rgba(255,255,255,0.18);
-
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
     border-radius: 22px;
-
 }
-
 
 .hero-label {
-
     margin-bottom: 13px;
-
-    color:
-    rgba(255,255,255,0.75);
-
+    color: rgba(255,255,255,0.75);
     font-size: 10px;
-
     font-weight: 700;
-
     letter-spacing: 3px;
-
     text-transform: uppercase;
-
 }
-
 
 .help-hero h1 {
-
     margin-bottom: 17px;
-
-    font-family:
-    "Playfair Display",
-    serif;
-
-    font-size:
-    clamp(40px, 6vw, 62px);
-
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px,6vw,62px);
     line-height: 1.1;
-
 }
-
 
 .help-hero h1 span {
-
     color: #c8eee7;
-
 }
 
-
 .help-hero p {
-
     max-width: 620px;
-
     margin: auto;
-
-    color:
-    rgba(255,255,255,0.82);
-
+    color: rgba(255,255,255,0.82);
     font-size: 14px;
-
     line-height: 1.8;
-
 }
 
 
@@ -515,13 +310,9 @@ a {
 ===================================================== */
 
 .help-container {
-
     max-width: 1100px;
-
     margin: 0 auto;
-
     padding: 80px 5%;
-
 }
 
 
@@ -530,83 +321,47 @@ a {
 ===================================================== */
 
 .help-intro {
-
     max-width: 700px;
-
-    margin:
-    0 auto 50px;
-
+    margin: 0 auto 50px;
     text-align: center;
-
 }
-
 
 .section-label {
-
     margin-bottom: 12px;
-
     color: #2f8986;
-
     font-size: 10px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
-
 }
-
 
 .help-intro h2 {
-
     margin-bottom: 15px;
-
     color: #293b3e;
-
-    font-family:
-    "Playfair Display",
-    serif;
-
-    font-size:
-    clamp(30px, 4vw, 43px);
-
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px,4vw,43px);
     line-height: 1.2;
-
 }
-
 
 .help-intro h2 span {
-
     color: #2f8986;
-
 }
 
-
 .help-intro p {
-
     color: #718083;
-
     font-size: 14px;
-
     line-height: 1.9;
-
 }
 
 
 /* =====================================================
-   HELP GRID
+   GRID
 ===================================================== */
 
 .help-grid {
-
     display: grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 28px;
-
 }
 
 
@@ -615,102 +370,51 @@ a {
 ===================================================== */
 
 .help-box {
-
     padding: 35px;
-
     background: white;
-
-    border:
-    1px solid
-    rgba(30,70,70,0.06);
-
+    border: 1px solid rgba(30,70,70,0.06);
     border-radius: 22px;
-
-    box-shadow:
-    0 15px 45px
-    rgba(30,70,70,0.07);
-
+    box-shadow: 0 15px 45px rgba(30,70,70,0.07);
     transition: 0.25s;
-
 }
 
 .help-box:hover {
-
-    transform:
-    translateY(-4px);
-
-    box-shadow:
-    0 20px 55px
-    rgba(30,70,70,0.11);
-
+    transform: translateY(-4px);
+    box-shadow: 0 20px 55px rgba(30,70,70,0.11);
 }
-
-
-/* CARD HEADER */
 
 .card-header {
-
     display: flex;
-
     align-items: center;
-
     gap: 15px;
-
     margin-bottom: 20px;
-
 }
-
 
 .card-icon {
-
     width: 52px;
-
     height: 52px;
-
     flex-shrink: 0;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     color: #2f8986;
-
     font-size: 19px;
-
     background: #eff8f6;
-
     border-radius: 15px;
-
 }
-
 
 .help-box h2 {
-
     color: #304245;
-
-    font-family:
-    "Playfair Display",
-    serif;
-
+    font-family: "Playfair Display", serif;
     font-size: 25px;
-
     line-height: 1.2;
-
 }
 
-
 .help-box p {
-
     margin-bottom: 15px;
-
     color: #718083;
-
     font-size: 13px;
-
     line-height: 1.9;
-
 }
 
 
@@ -719,104 +423,58 @@ a {
 ===================================================== */
 
 .quick-contact {
-
-    margin:
-    20px 0;
-
+    margin: 20px 0;
     padding: 20px;
-
-    background:
-    #f0f8f7;
-
+    background: #f0f8f7;
     border-radius: 15px;
-
 }
-
 
 .contact-item {
-
     display: flex;
-
     align-items: center;
-
     gap: 12px;
-
     margin-bottom: 12px;
-
     color: #526164;
-
     font-size: 13px;
-
 }
-
 
 .contact-item:last-child {
-
     margin-bottom: 0;
-
 }
 
-
 .contact-item i {
-
     width: 34px;
-
     height: 34px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     color: #2f8986;
-
     background: white;
-
     border-radius: 10px;
-
 }
 
 
 /* =====================================================
-   WHATSAPP BUTTON
+   WHATSAPP
 ===================================================== */
 
 .whatsapp-btn {
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 9px;
-
-    padding:
-    12px 20px;
-
+    padding: 12px 20px;
     color: white;
-
     background: #25D366;
-
     border-radius: 11px;
-
     font-size: 12px;
-
     font-weight: 700;
-
     transition: 0.2s;
-
 }
 
-
 .whatsapp-btn:hover {
-
-    transform:
-    translateY(-2px);
-
+    transform: translateY(-2px);
     background: #1ebe5d;
-
 }
 
 
@@ -825,128 +483,102 @@ a {
 ===================================================== */
 
 .help-form {
-
     margin-top: 5px;
-
 }
-
 
 .help-form label {
-
     display: block;
-
     margin-bottom: 7px;
-
     color: #526164;
-
     font-size: 11px;
-
     font-weight: 600;
-
 }
-
 
 .help-form input,
-
 .help-form textarea {
-
     width: 100%;
-
-    padding:
-    13px 14px;
-
+    padding: 13px 14px;
     margin-bottom: 17px;
-
     color: #304245;
-
     background: #fafcfc;
-
-    border:
-    1px solid
-    #e1e9e8;
-
+    border: 1px solid #e1e9e8;
     border-radius: 11px;
-
     outline: none;
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
+    font-family: "DM Sans", sans-serif;
     font-size: 13px;
-
     transition: 0.2s;
-
 }
-
 
 .help-form input:focus,
-
 .help-form textarea:focus {
-
     border-color: #72b7ad;
-
     background: white;
-
-    box-shadow:
-    0 0 0 3px
-    rgba(47,137,134,0.08);
-
+    box-shadow: 0 0 0 3px rgba(47,137,134,0.08);
 }
-
 
 .help-form textarea {
-
     min-height: 130px;
-
     resize: vertical;
-
 }
 
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
 
 .submit-btn {
-
     width: 100%;
-
     padding: 13px;
-
     border: none;
-
     border-radius: 11px;
-
     color: white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #2f8986,
-        #4e9c96
-    );
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
+    background: linear-gradient(135deg,#2f8986,#4e9c96);
+    font-family: "DM Sans", sans-serif;
     font-size: 13px;
-
     font-weight: 700;
-
     cursor: pointer;
-
     transition: 0.2s;
+}
 
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(47,137,134,0.20);
+}
+
+.submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
 }
 
 
-.submit-btn:hover {
+/* =====================================================
+   STATUS MESSAGE
+===================================================== */
 
-    transform:
-    translateY(-2px);
+.form-status {
+    display: none;
+    margin-top: 15px;
+    padding: 12px 14px;
+    border-radius: 11px;
+    font-size: 12px;
+    line-height: 1.6;
+}
 
-    box-shadow:
-    0 8px 20px
-    rgba(47,137,134,0.20);
+.form-status.show {
+    display: block;
+}
 
+.form-status.success {
+    color: #176b58;
+    background: #eaf8f3;
+    border: 1px solid #bce8d9;
+}
+
+.form-status.error {
+    color: #8b3a3a;
+    background: #fff0f0;
+    border: 1px solid #f1c4c4;
 }
 
 
@@ -955,117 +587,51 @@ a {
 ===================================================== */
 
 .support-note {
-
     margin-top: 28px;
-
     padding: 18px 20px;
-
-    background:
-    #fff9ef;
-
-    border-left:
-    4px solid #e6ad54;
-
-    border-radius:
-    0 13px 13px 0;
-
+    background: #fff9ef;
+    border-left: 4px solid #e6ad54;
+    border-radius: 0 13px 13px 0;
 }
-
 
 .support-note strong {
-
     display: block;
-
     margin-bottom: 5px;
-
     color: #8a641f;
-
     font-size: 12px;
-
 }
 
-
 .support-note p {
-
     margin: 0;
-
     color: #806f52;
-
     font-size: 11px;
-
     line-height: 1.7;
-
 }
 
 
 /* =====================================================
-   EXTRA SECTION
+   EXTRA
 ===================================================== */
 
 .extra {
-
-    padding:
-    65px 20px;
-
+    padding: 65px 20px;
     text-align: center;
-
-    background:
-    #eff8f6;
-
+    background: #eff8f6;
 }
-
-
-.extra-icon {
-
-    width: 58px;
-
-    height: 58px;
-
-    margin:
-    0 auto 15px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #2f8986;
-
-    background: white;
-
-    border-radius: 18px;
-
-}
-
 
 .extra h2 {
-
     margin-bottom: 10px;
-
     color: #293b3e;
-
-    font-family:
-    "Playfair Display",
-    serif;
-
+    font-family: "Playfair Display", serif;
     font-size: 30px;
-
 }
 
-
 .extra p {
-
     max-width: 600px;
-
     margin: auto;
-
     color: #718083;
-
     font-size: 13px;
-
     line-height: 1.8;
-
 }
 
 
@@ -1074,157 +640,83 @@ a {
 ===================================================== */
 
 footer {
-
     color: white;
-
     background: #182629;
-
 }
-
 
 .footer-main {
-
     max-width: 1100px;
-
     margin: 0 auto;
-
-    padding:
-    55px 5% 35px;
-
+    padding: 55px 5% 35px;
     display: grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
-
 }
-
 
 .footer-brand {
-
     max-width: 420px;
-
 }
-
 
 .footer-logo {
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 12px;
-
 }
-
 
 .footer-logo-image {
-
     width: 62px;
-
     height: 62px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     overflow: hidden;
-
 }
-
 
 .footer-logo-image img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: contain;
-
 }
-
 
 .footer-brand .brand-name strong {
-
     color: white;
-
 }
-
 
 .footer-brand .brand-name span {
-
     color: #8ed6c7;
-
 }
-
 
 .footer-brand p {
-
     max-width: 400px;
-
     margin-top: 17px;
-
-    color:
-    rgba(255,255,255,0.52);
-
+    color: rgba(255,255,255,0.52);
     font-size: 11px;
-
     line-height: 1.8;
-
 }
-
 
 .footer-links {
-
     display: flex;
-
     justify-content: flex-end;
-
     align-content: flex-start;
-
     flex-wrap: wrap;
-
-    gap:
-    12px 24px;
-
+    gap: 12px 24px;
 }
-
 
 .footer-links a {
-
-    color:
-    rgba(255,255,255,0.65);
-
+    color: rgba(255,255,255,0.65);
     font-size: 11px;
-
 }
-
 
 .footer-links a:hover {
-
     color: white;
-
 }
 
-
 .footer-bottom {
-
     padding: 17px;
-
     text-align: center;
-
-    color:
-    rgba(255,255,255,0.4);
-
+    color: rgba(255,255,255,0.4);
     font-size: 10px;
-
-    border-top:
-    1px solid
-    rgba(255,255,255,0.08);
-
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 
@@ -1233,52 +725,26 @@ footer {
 ===================================================== */
 
 .whatsapp {
-
     position: fixed;
-
     right: 22px;
-
     bottom: 22px;
-
     z-index: 2000;
-
     width: 56px;
-
     height: 56px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     color: white;
-
     font-size: 23px;
-
     border-radius: 50%;
-
     background: #25D366;
-
-    border:
-    3px solid
-    rgba(255,255,255,0.9);
-
-    box-shadow:
-    0 8px 22px
-    rgba(0,0,0,0.16);
-
+    border: 3px solid rgba(255,255,255,0.9);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.16);
     transition: 0.2s;
-
 }
 
-
 .whatsapp:hover {
-
-    transform:
-    translateY(-4px)
-    scale(1.06);
-
+    transform: translateY(-4px) scale(1.06);
 }
 
 
@@ -1288,132 +754,68 @@ footer {
 
 @media (max-width: 768px) {
 
-
     .navbar {
-
         min-height: 68px;
-
-        padding:
-        7px 18px;
-
+        padding: 7px 18px;
     }
-
 
     .brand-logo {
-
         width: 50px;
-
         height: 50px;
-
     }
-
 
     .brand-name strong {
-
         font-size: 16px;
-
     }
-
 
     .brand-name span {
-
         font-size: 9px;
-
     }
-
 
     .nav-links {
-
-        top:
-        calc(100% + 8px);
-
+        top: calc(100% + 8px);
         right: 15px;
-
-        width:
-        min(
-            235px,
-            calc(100vw - 30px)
-        );
-
+        width: min(235px,calc(100vw - 30px));
     }
-
 
     .help-hero {
-
         min-height: 360px;
-
-        padding:
-        60px 22px;
-
+        padding: 60px 22px;
     }
-
 
     .help-hero h1 {
-
         font-size: 42px;
-
     }
-
 
     .help-container {
-
-        padding:
-        65px 20px;
-
+        padding: 65px 20px;
     }
-
 
     .help-grid {
-
-        grid-template-columns:
-        1fr;
-
+        grid-template-columns: 1fr;
     }
-
 
     .help-box {
-
-        padding:
-        28px 22px;
-
+        padding: 28px 22px;
     }
-
 
     .footer-main {
-
-        grid-template-columns:
-        1fr;
-
-        padding:
-        45px 20px 30px;
-
+        grid-template-columns: 1fr;
+        padding: 45px 20px 30px;
         gap: 30px;
-
     }
-
 
     .footer-links {
-
-        justify-content:
-        flex-start;
-
+        justify-content: flex-start;
     }
-
 
     .whatsapp {
-
         width: 52px;
-
         height: 52px;
-
         right: 16px;
-
         bottom: 16px;
-
         font-size: 21px;
-
     }
-
 }
 
 </style>
@@ -1430,13 +832,7 @@ footer {
 
 <nav class="navbar">
 
-
-    <!-- BRAND -->
-
-    <a
-    href="index.html"
-    class="brand"
-    >
+    <a href="index.html" class="brand">
 
         <div class="brand-logo">
 
@@ -1446,7 +842,6 @@ footer {
             >
 
         </div>
-
 
         <div class="brand-name">
 
@@ -1463,8 +858,6 @@ footer {
     </a>
 
 
-    <!-- HAMBURGER -->
-
     <button
     class="menu-toggle"
     id="menuToggle"
@@ -1472,20 +865,13 @@ footer {
     >
 
         <span></span>
-
         <span></span>
-
         <span></span>
 
     </button>
 
 
-    <!-- NAVIGATION -->
-
-    <div
-    class="nav-links"
-    id="navLinks"
-    >
+    <div class="nav-links" id="navLinks">
 
         <a href="index.html">
             Home
@@ -1507,20 +893,19 @@ footer {
             Policy
         </a>
 
-        <a
-        href="help.html"
-        class="active"
-        >
+        <a href="help.html" class="active">
             Get Help
         </a>
 
         <a href="blood.html">
             Blood Donation
         </a>
-        
-        <a href="./gallery.html">
+
+        <a href="gallery.html">
             Gallery
         </a>
+
+    </div>
 
 </nav>
 
@@ -1531,47 +916,29 @@ footer {
 
 <section class="help-hero">
 
-
     <div class="hero-content">
 
-
         <div class="hero-icon">
-
             <i class="fa-solid fa-hands-holding-child"></i>
-
         </div>
-
 
         <div class="hero-label">
-
             YOU ARE NOT ALONE
-
         </div>
 
-
         <h1>
-
             Need Help?
-
-            <span>
-                We Are Here
-            </span>
-
+            <span>We Are Here</span>
         </h1>
 
-
         <p>
-
             If you are facing a difficult situation
             and need support, you can reach out to us.
             We will listen with care, respect, and
             confidentiality.
-
         </p>
 
-
     </div>
-
 
 </section>
 
@@ -1582,45 +949,27 @@ footer {
 
 <main class="help-container">
 
-
-    <!-- INTRO -->
-
     <section class="help-intro">
 
-
         <div class="section-label">
-
             SUPPORT & CARE
-
         </div>
 
-
         <h2>
-
             Reaching out is a
-
-            <span>
-                strong step
-            </span>
-
+            <span>strong step</span>
         </h2>
 
-
         <p>
-
             Whether you need someone to listen,
             guidance during a difficult situation,
             or help connecting with appropriate
             support, Sathwika Foundation is here
             to hear from you.
-
         </p>
-
 
     </section>
 
-
-    <!-- GRID -->
 
     <div class="help-grid">
 
@@ -1631,58 +980,41 @@ footer {
 
         <section class="help-box">
 
-
             <div class="card-header">
 
-
                 <div class="card-icon">
-
                     <i class="fa-solid fa-heart"></i>
-
                 </div>
 
-
                 <h2>
-
                     How We Help
-
                 </h2>
-
 
             </div>
 
 
             <p>
-
                 We support individuals who may be
                 facing domestic issues, emotional
                 distress, or difficult situations
                 and need someone to reach out to.
-
             </p>
 
 
             <p>
-
                 We aim to respond with care, respect,
                 and privacy while helping individuals
                 identify appropriate next steps.
-
             </p>
 
 
             <p>
-
                 Your safety and confidentiality
                 are important to us.
-
             </p>
 
 
-            <!-- CONTACT -->
-
             <div class="quick-contact">
-
 
                 <div class="contact-item">
 
@@ -1705,11 +1037,8 @@ footer {
 
                 </div>
 
-
             </div>
 
-
-            <!-- WHATSAPP -->
 
             <a
             href="https://wa.me/919030606322"
@@ -1725,20 +1054,13 @@ footer {
             </a>
 
 
-            <!-- NOTE -->
-
             <div class="support-note">
 
-
                 <strong>
-
                     Please remember
-
                 </strong>
 
-
                 <p>
-
                     Sathwika Foundation is a community
                     initiative and is not a substitute
                     for professional medical, legal,
@@ -1747,12 +1069,9 @@ footer {
                     If you are in immediate danger,
                     please contact the appropriate
                     emergency services or authorities.
-
                 </p>
 
-
             </div>
-
 
         </section>
 
@@ -1763,89 +1082,69 @@ footer {
 
         <section class="help-box">
 
-
             <div class="card-header">
 
-
                 <div class="card-icon">
-
                     <i class="fa-solid fa-message"></i>
-
                 </div>
 
-
                 <h2>
-
                     Request Help
-
                 </h2>
-
 
             </div>
 
 
             <p>
-
                 You can submit your request below.
                 Share only the information you are
                 comfortable providing.
 
                 We will try our best to respond
                 as soon as possible.
-
             </p>
 
 
-            <!-- FORM -->
+            <!-- =================================================
+                 BACKEND CONNECTED FORM
+            ================================================== -->
 
             <form
             class="help-form"
-            action="https://formspree.io/f/xzdkbjoo"
-            method="POST"
+            id="helpForm"
             >
 
-
                 <label for="name">
-
                     Your Name
-
-                    <span>
-                        (Optional)
-                    </span>
-
+                    <span>(Optional)</span>
                 </label>
-
 
                 <input
                 type="text"
                 id="name"
                 name="name"
                 placeholder="Enter your name"
+                autocomplete="name"
                 >
 
 
                 <label for="phone">
-
                     Phone Number
-
                 </label>
-
 
                 <input
                 type="tel"
                 id="phone"
                 name="phone"
                 placeholder="Enter your phone number"
+                autocomplete="tel"
                 required
                 >
 
 
                 <label for="message">
-
                     How can we help?
-
                 </label>
-
 
                 <textarea
                 id="message"
@@ -1858,25 +1157,34 @@ footer {
                 <button
                 type="submit"
                 class="submit-btn"
+                id="submitBtn"
                 >
 
                     <i class="fa-solid fa-paper-plane"></i>
 
                     &nbsp;
 
-                    Request Help
+                    <span id="submitText">
+                        Request Help
+                    </span>
 
                 </button>
 
 
-            </form>
+                <!-- STATUS -->
 
+                <div
+                id="formStatus"
+                class="form-status"
+                role="alert"
+                aria-live="polite"
+                ></div>
+
+            </form>
 
         </section>
 
-
     </div>
-
 
 </main>
 
@@ -1887,18 +1195,11 @@ footer {
 
 <section class="extra">
 
-
-   
-
     <h2>
-
-        You're Not Alone 
-
+        You're Not Alone
     </h2>
 
-
     <p>
-
         Reaching out for help is a strong and
         important step.
 
@@ -1907,9 +1208,7 @@ footer {
 
         We are here to listen and help you
         find a way forward.
-
     </p>
-
 
 </section>
 
@@ -1920,20 +1219,11 @@ footer {
 
 <footer>
 
-
     <div class="footer-main">
-
-
-        <!-- FOOTER BRAND -->
 
         <div class="footer-brand">
 
-
-            <a
-            href="index.html"
-            class="footer-logo"
-            >
-
+            <a href="index.html" class="footer-logo">
 
                 <div class="footer-logo-image">
 
@@ -1944,87 +1234,68 @@ footer {
 
                 </div>
 
-
                 <div class="brand-name">
 
-
                     <strong>
-
                         Sathwika Foundation
-
                     </strong>
 
-
                     <span>
-
                         Serving with compassion
-
                     </span>
 
-
                 </div>
-
 
             </a>
 
 
             <p>
-
                 A compassionate initiative focused
                 on education, food assistance, and
                 community care.
 
                 Together, we can help build
                 a better future.
-
             </p>
-
 
         </div>
 
 
-        <!-- FOOTER LINKS -->
-
         <div class="footer-links">
-
 
             <a href="index.html">
                 Home
             </a>
 
-
             <a href="about.html">
                 About
             </a>
-
 
             <a href="contribute.html">
                 Contribute
             </a>
 
-
             <a href="contact.html">
                 Contact
             </a>
-
 
             <a href="policy.html">
                 Policy
             </a>
 
-
             <a href="help.html">
                 Get Help
             </a>
 
-
             <a href="blood.html">
                 Blood Donation
             </a>
-            
+
+            <a href="gallery.html">
+                Gallery
+            </a>
 
         </div>
-
 
     </div>
 
@@ -2035,7 +1306,6 @@ footer {
         All Rights Reserved.
 
     </div>
-
 
 </footer>
 
@@ -2063,107 +1333,309 @@ aria-label="Chat with Sathwika Foundation on WhatsApp"
 
 <script>
 
+/* =====================================================
+   BACKEND CONFIGURATION
+===================================================== */
+
+/*
+   LOCAL DEVELOPMENT:
+
+   http://localhost:5000
+
+   AFTER DEPLOYMENT:
+
+   Replace this with your actual backend URL.
+
+   Example:
+
+   const API_BASE_URL =
+       "https://your-backend-domain.com";
+*/
+
+const API_BASE_URL = "http://localhost:5000";
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 const menuToggle =
-document.getElementById(
-    "menuToggle"
-);
-
+    document.getElementById("menuToggle");
 
 const navLinks =
-document.getElementById(
-    "navLinks"
-);
+    document.getElementById("navLinks");
 
-
-/* OPEN / CLOSE MENU */
 
 menuToggle.addEventListener(
     "click",
     function(event) {
 
-
         event.stopPropagation();
 
+        navLinks.classList.toggle("active");
 
-        navLinks.classList.toggle(
-            "active"
-        );
-
-
-        menuToggle.classList.toggle(
-            "active"
-        );
-
+        menuToggle.classList.toggle("active");
 
     }
 );
 
 
-/* CLOSE AFTER LINK CLICK */
-
 navLinks
-.querySelectorAll("a")
-.forEach(
-    function(link) {
-
+    .querySelectorAll("a")
+    .forEach(function(link) {
 
         link.addEventListener(
             "click",
             function() {
 
+                navLinks.classList.remove("active");
 
-                navLinks.classList.remove(
-                    "active"
-                );
-
-
-                menuToggle.classList.remove(
-                    "active"
-                );
-
+                menuToggle.classList.remove("active");
 
             }
         );
 
+    });
 
-    }
-);
-
-
-/* CLOSE WHEN CLICKING OUTSIDE */
 
 document.addEventListener(
     "click",
     function(event) {
 
-
         if (
-            !navLinks.contains(
-                event.target
-            ) &&
-            !menuToggle.contains(
-                event.target
-            )
+            !navLinks.contains(event.target) &&
+            !menuToggle.contains(event.target)
         ) {
 
+            navLinks.classList.remove("active");
 
-            navLinks.classList.remove(
-                "active"
-            );
-
-
-            menuToggle.classList.remove(
-                "active"
-            );
-
+            menuToggle.classList.remove("active");
 
         }
-
 
     }
 );
 
+
+/* =====================================================
+   HELP FORM
+===================================================== */
+
+const helpForm =
+    document.getElementById("helpForm");
+
+const submitBtn =
+    document.getElementById("submitBtn");
+
+const submitText =
+    document.getElementById("submitText");
+
+const formStatus =
+    document.getElementById("formStatus");
+
+
+/* =====================================================
+   STATUS HELPER
+===================================================== */
+
+function showStatus(message, type) {
+
+    formStatus.textContent = message;
+
+    formStatus.className =
+        "form-status show " + type;
+
+}
+
+
+/* =====================================================
+   SUBMIT HELP REQUEST
+===================================================== */
+
+helpForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        /* ---------------------------------------------
+           GET FORM VALUES
+        --------------------------------------------- */
+
+        const name =
+            document
+            .getElementById("name")
+            .value
+            .trim();
+
+
+        const phone =
+            document
+            .getElementById("phone")
+            .value
+            .trim();
+
+
+        const message =
+            document
+            .getElementById("message")
+            .value
+            .trim();
+
+
+        /* ---------------------------------------------
+           BASIC VALIDATION
+        --------------------------------------------- */
+
+        if (!phone) {
+
+            showStatus(
+                "Please enter your phone number.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (!message) {
+
+            showStatus(
+                "Please describe how we can help.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        /* ---------------------------------------------
+           DISABLE BUTTON
+        --------------------------------------------- */
+
+        submitBtn.disabled = true;
+
+        submitText.textContent =
+            "Sending...";
+
+        formStatus.className =
+            "form-status";
+
+
+        try {
+
+            /* -----------------------------------------
+               SEND TO EXPRESS BACKEND
+            ----------------------------------------- */
+
+            const response =
+                await fetch(
+                    `${API_BASE_URL}/api/help`,
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            name: name,
+
+                            phone: phone,
+
+                            message: message,
+
+                            type: "help"
+
+                        })
+
+                    }
+                );
+
+
+            /* -----------------------------------------
+               READ RESPONSE
+            ----------------------------------------- */
+
+            let data = {};
+
+            try {
+
+                data =
+                    await response.json();
+
+            } catch (jsonError) {
+
+                data = {};
+
+            }
+
+
+            /* -----------------------------------------
+               ERROR RESPONSE
+            ----------------------------------------- */
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Unable to submit your help request."
+                );
+
+            }
+
+
+            /* -----------------------------------------
+               SUCCESS
+            ----------------------------------------- */
+
+            showStatus(
+                data.message ||
+                "Your help request has been submitted successfully. We will get back to you soon.",
+                "success"
+            );
+
+
+            /* Clear form */
+
+            helpForm.reset();
+
+
+        } catch (error) {
+
+            console.error(
+                "Help request error:",
+                error
+            );
+
+
+            showStatus(
+                error.message ||
+                "Something went wrong. Please try again or contact us directly.",
+                "error"
+            );
+
+
+        } finally {
+
+            /* -----------------------------------------
+               ENABLE BUTTON
+            ----------------------------------------- */
+
+            submitBtn.disabled = false;
+
+            submitText.textContent =
+                "Request Help";
+
+        }
+
+    }
+);
 
 </script>
 

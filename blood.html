@@ -1263,7 +1263,7 @@ footer {
         class="menu-toggle"
         id="menuToggle"
         aria-label="Open navigation menu"
-        aria-expanded="false"
+        aria-expanded="false"  
     >
 
         <span></span>
@@ -1436,8 +1436,7 @@ footer {
 
         <form
             class="donor-form"
-            action="https://formspree.io/f/xzdkbjoo"
-            method="POST"
+            
         >
 
 
@@ -1834,3 +1833,85 @@ document.addEventListener(
 </body>
 
 </html>
+
+<script>
+
+/* =====================================================
+   BLOOD DONOR FORM - BACKEND CONNECTION
+===================================================== */
+
+const donorForm = document.querySelector(".donor-form");
+
+if (donorForm) {
+
+    donorForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const bloodgroup =
+            document.getElementById("bloodgroup").value;
+
+        const location =
+            document.getElementById("location").value.trim();
+
+        try {
+
+            const response = await fetch(
+                "http://localhost:5000/api/blood",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        bloodgroup: bloodgroup,
+                        location: location
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(
+                    data.message ||
+                    "Unable to register as a donor."
+                );
+            }
+
+            alert(
+                data.message ||
+                "Blood donor registration submitted successfully."
+            );
+
+            donorForm.reset();
+
+        } catch (error) {
+
+            console.error(
+                "Blood donor submission error:",
+                error
+            );
+
+            alert(
+                "Unable to submit your registration. Please try again."
+            );
+
+        }
+
+    });
+
+}
+
+</script>
+
