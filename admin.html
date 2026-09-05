@@ -2205,6 +2205,263 @@ button {
 }
 
 
+
+/* =========================================================
+   CONTENT MANAGEMENT
+========================================================= */
+
+.content-editor {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(420px, 1.15fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.editor-card,
+.program-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+}
+
+.editor-card {
+    padding: 22px;
+}
+
+.editor-card h3 {
+    color: var(--text-dark);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.editor-card > p {
+    color: var(--text-grey);
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.editor-form {
+    display: grid;
+    gap: 13px;
+}
+
+.editor-field label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-medium);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+}
+
+.editor-field input,
+.editor-field textarea,
+.editor-field select {
+    width: 100%;
+    border: 1px solid #dfe8e7;
+    border-radius: 9px;
+    outline: none;
+    background: #fafcfc;
+    color: var(--text-dark);
+    padding: 10px 12px;
+    font-size: 11px;
+    font-family: inherit;
+}
+
+.editor-field input {
+    height: 42px;
+}
+
+.editor-field textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.editor-field input:focus,
+.editor-field textarea:focus,
+.editor-field select:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(47,137,134,.08);
+}
+
+.editor-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+}
+
+.primary-action,
+.secondary-action,
+.danger-action {
+    min-height: 40px;
+    border: none;
+    border-radius: 9px;
+    padding: 0 14px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.primary-action {
+    color: white;
+    background: linear-gradient(135deg, var(--primary), #4e9c96);
+}
+
+.secondary-action {
+    color: var(--text-medium);
+    background: #eff3f3;
+}
+
+.danger-action {
+    color: var(--danger);
+    background: var(--danger-light);
+}
+
+.primary-action:disabled,
+.secondary-action:disabled,
+.danger-action:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.editor-status {
+    min-height: 16px;
+    color: var(--text-grey);
+    font-size: 9px;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.impact-card {
+    padding: 18px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.impact-card .impact-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--primary);
+    background: var(--primary-light);
+    border-radius: 9px;
+}
+
+.impact-card span {
+    display: block;
+    color: var(--text-grey);
+    font-size: 9px;
+}
+
+.impact-card strong {
+    display: block;
+    margin-top: 4px;
+    color: var(--text-dark);
+    font-size: 25px;
+}
+
+.program-list {
+    display: grid;
+    gap: 11px;
+}
+
+.program-card {
+    padding: 17px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+}
+
+.program-card h3 {
+    color: var(--text-dark);
+    font-size: 13px;
+}
+
+.program-card p {
+    margin-top: 5px;
+    color: var(--text-grey);
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.program-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 9px;
+}
+
+.program-meta span {
+    padding: 5px 8px;
+    color: var(--text-medium);
+    background: #f1f5f5;
+    border-radius: 7px;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.program-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.icon-action {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-medium);
+    background: #eff3f3;
+}
+
+.icon-action:hover {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.icon-action.delete:hover {
+    color: var(--danger);
+    background: var(--danger-light);
+}
+
+.impact-note {
+    margin-top: 10px;
+    color: var(--text-light);
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+@media (max-width: 950px) {
+    .content-editor {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
 /* =========================================================
    RESPONSIVE
 ========================================================= */
@@ -2720,6 +2977,31 @@ button {
 
 
         <div class="sidebar-label">
+            Content Management
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="sidebar-item"
+                data-section="stats"
+            >
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Website Statistics</span>
+            </button>
+
+            <button
+                class="sidebar-item"
+                data-section="programs"
+            >
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Programs</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-label">
             Foundation
         </div>
 
@@ -3121,6 +3403,30 @@ button {
 
                     <div
                         class="module-card"
+                        data-module="stats"
+                    >
+                        <div class="module-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <strong>Website Statistics</strong>
+                        <span>Update impact numbers shown on the website.</span>
+                    </div>
+
+
+                    <div
+                        class="module-card"
+                        data-module="programs"
+                    >
+                        <div class="module-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <strong>Programs</strong>
+                        <span>Add, edit and remove foundation programs.</span>
+                    </div>
+
+
+                    <div
+                        class="module-card"
                         data-module="contacts"
                     >
 
@@ -3312,6 +3618,304 @@ button {
 
             </section>
 
+
+
+
+            <!-- =================================================
+                 WEBSITE STATISTICS SECTION
+            ================================================== -->
+
+            <section
+                id="statsSection"
+                class="dashboard-section hidden"
+            >
+
+                <div class="page-heading">
+                    <div class="eyebrow">CONTENT MANAGEMENT</div>
+                    <h1>Website Statistics</h1>
+                    <p>Update the impact numbers displayed across the public website.</p>
+                </div>
+
+                <div class="impact-grid">
+
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <span>People Helped</span>
+                        <strong id="contentPeopleHelped">0</strong>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <span>Programs Completed</span>
+                        <strong id="contentProgramsCompleted">0</strong>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span>Volunteers</span>
+                        <strong id="contentVolunteers">0</strong>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <span>Communities Reached</span>
+                        <strong id="contentCommunitiesReached">0</strong>
+                    </div>
+
+                </div>
+
+                <div class="editor-card">
+
+                    <h3>Update Impact Numbers</h3>
+
+                    <p>
+                        Change these values whenever your foundation's real-world
+                        impact changes. The public website will use the saved values.
+                    </p>
+
+                    <form id="statsForm" class="editor-form">
+
+                        <div class="editor-row">
+
+                            <div class="editor-field">
+                                <label for="statsPeopleHelped">People Helped</label>
+                                <input
+                                    id="statsPeopleHelped"
+                                    type="number"
+                                    min="0"
+                                    required
+                                >
+                            </div>
+
+                            <div class="editor-field">
+                                <label for="statsProgramsCompleted">Programs Completed</label>
+                                <input
+                                    id="statsProgramsCompleted"
+                                    type="number"
+                                    min="0"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="editor-row">
+
+                            <div class="editor-field">
+                                <label for="statsVolunteers">Volunteers</label>
+                                <input
+                                    id="statsVolunteers"
+                                    type="number"
+                                    min="0"
+                                    required
+                                >
+                            </div>
+
+                            <div class="editor-field">
+                                <label for="statsCommunitiesReached">Communities Reached</label>
+                                <input
+                                    id="statsCommunitiesReached"
+                                    type="number"
+                                    min="0"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="primary-action"
+                                id="saveStatsBtn"
+                            >
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                &nbsp; Save Statistics
+                            </button>
+
+                            <button
+                                type="button"
+                                class="secondary-action"
+                                id="refreshStatsBtn"
+                            >
+                                <i class="fa-solid fa-rotate"></i>
+                                &nbsp; Refresh
+                            </button>
+
+                        </div>
+
+                        <div
+                            class="editor-status"
+                            id="statsStatus"
+                        ></div>
+
+                    </form>
+
+                    <div class="impact-note">
+                        Example: after a new program, update People Helped from
+                        4800 to the new verified total and save.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROGRAMS SECTION
+            ================================================== -->
+
+            <section
+                id="programsSection"
+                class="dashboard-section hidden"
+            >
+
+                <div class="page-heading">
+                    <div class="eyebrow">CONTENT MANAGEMENT</div>
+                    <h1>Programs</h1>
+                    <p>Add and manage the programs that should appear on the website.</p>
+                </div>
+
+                <div class="content-editor">
+
+                    <div class="editor-card">
+
+                        <h3 id="programFormTitle">Add New Program</h3>
+
+                        <p>
+                            Create a program once. You can edit it later without changing HTML.
+                        </p>
+
+                        <form id="programForm" class="editor-form">
+
+                            <div class="editor-field">
+                                <label for="programTitle">Program Title</label>
+                                <input
+                                    id="programTitle"
+                                    type="text"
+                                    placeholder="Example: Community Food Distribution"
+                                    required
+                                >
+                            </div>
+
+                            <div class="editor-row">
+
+                                <div class="editor-field">
+                                    <label for="programDate">Date</label>
+                                    <input
+                                        id="programDate"
+                                        type="date"
+                                    >
+                                </div>
+
+                                <div class="editor-field">
+                                    <label for="programPeopleHelped">People Helped</label>
+                                    <input
+                                        id="programPeopleHelped"
+                                        type="number"
+                                        min="0"
+                                        value="0"
+                                    >
+                                </div>
+
+                            </div>
+
+                            <div class="editor-field">
+                                <label for="programLocation">Location</label>
+                                <input
+                                    id="programLocation"
+                                    type="text"
+                                    placeholder="Example: Hyderabad"
+                                >
+                            </div>
+
+                            <div class="editor-field">
+                                <label for="programDescription">Description</label>
+                                <textarea
+                                    id="programDescription"
+                                    placeholder="Describe what happened in this program..."
+                                ></textarea>
+                            </div>
+
+                            <div class="editor-field">
+                                <label for="programImageUrl">Image URL (optional)</label>
+                                <input
+                                    id="programImageUrl"
+                                    type="url"
+                                    placeholder="Gallery image URL"
+                                >
+                            </div>
+
+                            <div class="form-actions">
+
+                                <button
+                                    type="submit"
+                                    class="primary-action"
+                                    id="saveProgramBtn"
+                                >
+                                    <i class="fa-solid fa-plus"></i>
+                                    &nbsp; Add Program
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="secondary-action hidden"
+                                    id="cancelProgramEditBtn"
+                                >
+                                    Cancel Edit
+                                </button>
+
+                            </div>
+
+                            <div
+                                class="editor-status"
+                                id="programStatus"
+                            ></div>
+
+                        </form>
+
+                    </div>
+
+
+                    <div class="editor-card">
+
+                        <div class="section-title-row">
+                            <h2>Saved Programs</h2>
+
+                            <button
+                                type="button"
+                                class="secondary-action"
+                                id="refreshProgramsBtn"
+                            >
+                                <i class="fa-solid fa-rotate"></i>
+                                Refresh
+                            </button>
+                        </div>
+
+                        <div
+                            class="program-list"
+                            id="programsList"
+                        >
+                            <div class="loading">
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+                                Loading programs...
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
 
 
             <!-- =================================================
@@ -4270,6 +4874,30 @@ const sectionConfig = {
 
     },
 
+    stats: {
+
+        title: "Website Statistics",
+
+        subtitle:
+            "Impact numbers",
+
+        icon:
+            "fa-chart-line"
+
+    },
+
+    programs: {
+
+        title: "Programs",
+
+        subtitle:
+            "Program management",
+
+        icon:
+            "fa-calendar-check"
+
+    },
+
     contacts: {
 
         title: "Contact Messages",
@@ -4495,6 +5123,8 @@ function showDashboard() {
     switchSection("overview");
 
     loadContacts();
+    loadContentStats();
+    loadPrograms();
 
 }
 
@@ -5866,6 +6496,788 @@ document
     );
 
 
+
+/* =========================================================
+   CONTENT MANAGEMENT
+========================================================= */
+
+let contentStats = null;
+let programs = [];
+let editingProgramId = null;
+
+
+async function loadContentStats() {
+
+    try {
+
+        const response = await fetch(
+            `${API_BASE}/api/content/stats`
+        );
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(
+                data.message || "Failed to load statistics"
+            );
+        }
+
+        contentStats = data.data;
+
+        renderContentStats();
+
+    } catch (error) {
+
+        console.error("Statistics loading error:", error);
+
+        const status =
+            document.getElementById("statsStatus");
+
+        if (status) {
+            status.textContent =
+                `Unable to load statistics: ${error.message}`;
+        }
+    }
+}
+
+
+function renderContentStats() {
+
+    if (!contentStats) {
+        return;
+    }
+
+    const values = {
+        contentPeopleHelped: contentStats.people_helped,
+        contentProgramsCompleted: contentStats.programs_completed,
+        contentVolunteers: contentStats.volunteers,
+        contentCommunitiesReached: contentStats.communities_reached
+    };
+
+    Object.entries(values).forEach(([id, value]) => {
+
+        const element = document.getElementById(id);
+
+        if (element) {
+            element.textContent =
+                Number(value || 0).toLocaleString();
+        }
+
+    });
+
+
+    const fields = {
+        statsPeopleHelped: contentStats.people_helped,
+        statsProgramsCompleted: contentStats.programs_completed,
+        statsVolunteers: contentStats.volunteers,
+        statsCommunitiesReached: contentStats.communities_reached
+    };
+
+    Object.entries(fields).forEach(([id, value]) => {
+
+        const element = document.getElementById(id);
+
+        if (element && document.activeElement !== element) {
+            element.value = Number(value || 0);
+        }
+
+    });
+
+}
+
+
+async function saveContentStats(event) {
+
+    event.preventDefault();
+
+    const token =
+        localStorage.getItem(TOKEN_KEY);
+
+    if (!token) {
+        showLogin();
+        return;
+    }
+
+    const button =
+        document.getElementById("saveStatsBtn");
+
+    const status =
+        document.getElementById("statsStatus");
+
+    const payload = {
+        people_helped:
+            Number(document.getElementById("statsPeopleHelped").value),
+
+        programs_completed:
+            Number(document.getElementById("statsProgramsCompleted").value),
+
+        volunteers:
+            Number(document.getElementById("statsVolunteers").value),
+
+        communities_reached:
+            Number(document.getElementById("statsCommunitiesReached").value)
+    };
+
+    if (
+        Object.values(payload).some(
+            value => !Number.isFinite(value) || value < 0
+        )
+    ) {
+
+        status.textContent =
+            "Please enter valid non-negative numbers.";
+
+        return;
+    }
+
+    button.disabled = true;
+    button.innerHTML =
+        `<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Saving...`;
+
+    try {
+
+        const response = await fetch(
+            `${API_BASE}/api/content/stats`,
+            {
+                method: "PATCH",
+
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+
+                body: JSON.stringify(payload)
+            }
+        );
+
+        const data = await response.json();
+
+        if (response.status === 401 || response.status === 403) {
+
+            localStorage.removeItem(TOKEN_KEY);
+            showLogin();
+
+            showToast(
+                "Admin session expired",
+                "error"
+            );
+
+            return;
+        }
+
+        if (!response.ok || !data.success) {
+            throw new Error(
+                data.message || "Failed to save statistics"
+            );
+        }
+
+        contentStats = data.data;
+
+        renderContentStats();
+
+        status.textContent =
+            "Statistics saved successfully.";
+
+        showToast(
+            "Website statistics updated",
+            "success"
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Statistics update error:",
+            error
+        );
+
+        status.textContent =
+            error.message;
+
+        showToast(
+            "Unable to update statistics",
+            "error"
+        );
+
+    } finally {
+
+        button.disabled = false;
+
+        button.innerHTML =
+            `<i class="fa-solid fa-floppy-disk"></i>&nbsp; Save Statistics`;
+    }
+}
+
+
+async function loadPrograms() {
+
+    const list =
+        document.getElementById("programsList");
+
+    if (!list) {
+        return;
+    }
+
+    list.innerHTML = `
+        <div class="loading">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            Loading programs...
+        </div>
+    `;
+
+    try {
+
+        const response = await fetch(
+            `${API_BASE}/api/content/programs`
+        );
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(
+                data.message || "Failed to load programs"
+            );
+        }
+
+        programs =
+            Array.isArray(data.data)
+                ? data.data
+                : [];
+
+        renderPrograms();
+
+    } catch (error) {
+
+        console.error(
+            "Programs loading error:",
+            error
+        );
+
+        list.innerHTML = `
+            <div class="empty">
+                <div class="empty-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <strong>
+                    Unable to load programs
+                </strong>
+
+                <p>
+                    ${escapeHtml(error.message)}
+                </p>
+            </div>
+        `;
+    }
+}
+
+
+function renderPrograms() {
+
+    const list =
+        document.getElementById("programsList");
+
+    if (!list) {
+        return;
+    }
+
+    if (!programs.length) {
+
+        list.innerHTML = `
+            <div class="empty">
+                <div class="empty-icon">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                </div>
+
+                <strong>
+                    No programs yet
+                </strong>
+
+                <p>
+                    Add your first foundation program using the form.
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+    list.innerHTML =
+        programs.map(program => {
+
+            const date =
+                program.program_date
+                    ? formatDateShort(program.program_date)
+                    : "Date not set";
+
+            return `
+                <article class="program-card">
+
+                    <div>
+
+                        <h3>
+                            ${escapeHtml(
+                                program.title || "Untitled Program"
+                            )}
+                        </h3>
+
+                        <p>
+                            ${escapeHtml(
+                                program.description ||
+                                "No description provided."
+                            )}
+                        </p>
+
+                        <div class="program-meta">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                ${escapeHtml(date)}
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                ${escapeHtml(
+                                    program.location || "Location not set"
+                                )}
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-users"></i>
+                                ${Number(
+                                    program.people_helped || 0
+                                ).toLocaleString()}
+                                helped
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="program-actions">
+
+                        <button
+                            type="button"
+                            class="icon-action"
+                            title="Edit"
+                            onclick="startProgramEdit(${Number(program.id)})"
+                        >
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="icon-action delete"
+                            title="Delete"
+                            onclick="deleteProgram(${Number(program.id)})"
+                        >
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+            `;
+
+        }).join("");
+}
+
+
+function resetProgramForm() {
+
+    editingProgramId = null;
+
+    document.getElementById("programForm").reset();
+
+    document.getElementById("programPeopleHelped").value = "0";
+
+    document.getElementById("programFormTitle").textContent =
+        "Add New Program";
+
+    document.getElementById("saveProgramBtn").innerHTML =
+        `<i class="fa-solid fa-plus"></i>&nbsp; Add Program`;
+
+    document.getElementById("cancelProgramEditBtn")
+        .classList.add("hidden");
+
+    document.getElementById("programStatus").textContent = "";
+
+}
+
+
+function startProgramEdit(id) {
+
+    const program =
+        programs.find(
+            item => Number(item.id) === Number(id)
+        );
+
+    if (!program) {
+        return;
+    }
+
+    editingProgramId =
+        Number(program.id);
+
+    document.getElementById("programTitle").value =
+        program.title || "";
+
+    document.getElementById("programDate").value =
+        program.program_date
+            ? String(program.program_date).slice(0, 10)
+            : "";
+
+    document.getElementById("programPeopleHelped").value =
+        Number(program.people_helped || 0);
+
+    document.getElementById("programLocation").value =
+        program.location || "";
+
+    document.getElementById("programDescription").value =
+        program.description || "";
+
+    document.getElementById("programImageUrl").value =
+        program.image_url || "";
+
+    document.getElementById("programFormTitle").textContent =
+        "Edit Program";
+
+    document.getElementById("saveProgramBtn").innerHTML =
+        `<i class="fa-solid fa-floppy-disk"></i>&nbsp; Save Changes`;
+
+    document.getElementById("cancelProgramEditBtn")
+        .classList.remove("hidden");
+
+    document.getElementById("programStatus").textContent =
+        "Editing selected program.";
+
+    document.getElementById("programTitle").focus();
+
+}
+
+
+async function saveProgram(event) {
+
+    event.preventDefault();
+
+    const token =
+        localStorage.getItem(TOKEN_KEY);
+
+    if (!token) {
+        showLogin();
+        return;
+    }
+
+    const button =
+        document.getElementById("saveProgramBtn");
+
+    const status =
+        document.getElementById("programStatus");
+
+    const payload = {
+        title:
+            document.getElementById("programTitle").value.trim(),
+
+        program_date:
+            document.getElementById("programDate").value || null,
+
+        location:
+            document.getElementById("programLocation").value.trim(),
+
+        description:
+            document.getElementById("programDescription").value.trim(),
+
+        people_helped:
+            Number(document.getElementById("programPeopleHelped").value) || 0,
+
+        image_url:
+            document.getElementById("programImageUrl").value.trim() || null
+    };
+
+    if (!payload.title) {
+
+        status.textContent =
+            "Program title is required.";
+
+        return;
+    }
+
+    button.disabled = true;
+
+    button.innerHTML =
+        `<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Saving...`;
+
+    try {
+
+        const isEditing =
+            editingProgramId !== null;
+
+        const url =
+            isEditing
+                ? `${API_BASE}/api/content/programs/${editingProgramId}`
+                : `${API_BASE}/api/content/programs`;
+
+        const response = await fetch(
+            url,
+            {
+                method:
+                    isEditing
+                        ? "PATCH"
+                        : "POST",
+
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+
+                body:
+                    JSON.stringify(payload)
+            }
+        );
+
+        const data =
+            await response.json();
+
+        if (
+            response.status === 401 ||
+            response.status === 403
+        ) {
+
+            localStorage.removeItem(TOKEN_KEY);
+
+            showLogin();
+
+            showToast(
+                "Admin session expired",
+                "error"
+            );
+
+            return;
+        }
+
+        if (!response.ok || !data.success) {
+            throw new Error(
+                data.message || "Failed to save program"
+            );
+        }
+
+        showToast(
+            isEditing
+                ? "Program updated successfully"
+                : "Program added successfully",
+            "success"
+        );
+
+        resetProgramForm();
+
+        await loadPrograms();
+
+    } catch (error) {
+
+        console.error(
+            "Program save error:",
+            error
+        );
+
+        status.textContent =
+            error.message;
+
+        showToast(
+            "Unable to save program",
+            "error"
+        );
+
+    } finally {
+
+        button.disabled = false;
+
+        button.innerHTML =
+            editingProgramId !== null
+                ? `<i class="fa-solid fa-floppy-disk"></i>&nbsp; Save Changes`
+                : `<i class="fa-solid fa-plus"></i>&nbsp; Add Program`;
+    }
+}
+
+
+async function deleteProgram(id) {
+
+    const token =
+        localStorage.getItem(TOKEN_KEY);
+
+    if (!token) {
+        showLogin();
+        return;
+    }
+
+    const program =
+        programs.find(
+            item => Number(item.id) === Number(id)
+        );
+
+    if (!program) {
+        return;
+    }
+
+    const confirmed =
+        window.confirm(
+            `Delete "${program.title}"? This cannot be undone.`
+        );
+
+    if (!confirmed) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            `${API_BASE}/api/content/programs/${id}`,
+            {
+                method: "DELETE",
+
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        const data =
+            await response.json();
+
+        if (
+            response.status === 401 ||
+            response.status === 403
+        ) {
+
+            localStorage.removeItem(TOKEN_KEY);
+
+            showLogin();
+
+            showToast(
+                "Admin session expired",
+                "error"
+            );
+
+            return;
+        }
+
+        if (!response.ok || !data.success) {
+            throw new Error(
+                data.message || "Failed to delete program"
+            );
+        }
+
+        if (
+            editingProgramId === Number(id)
+        ) {
+            resetProgramForm();
+        }
+
+        showToast(
+            "Program deleted successfully",
+            "success"
+        );
+
+        await loadPrograms();
+
+    } catch (error) {
+
+        console.error(
+            "Program delete error:",
+            error
+        );
+
+        showToast(
+            error.message,
+            "error"
+        );
+    }
+}
+
+
+function setupContentManagement() {
+
+    const statsForm =
+        document.getElementById("statsForm");
+
+    if (statsForm && !statsForm.dataset.ready) {
+
+        statsForm.dataset.ready = "true";
+
+        statsForm.addEventListener(
+            "submit",
+            saveContentStats
+        );
+    }
+
+
+    const refreshStatsBtn =
+        document.getElementById("refreshStatsBtn");
+
+    if (
+        refreshStatsBtn &&
+        !refreshStatsBtn.dataset.ready
+    ) {
+
+        refreshStatsBtn.dataset.ready = "true";
+
+        refreshStatsBtn.addEventListener(
+            "click",
+            loadContentStats
+        );
+    }
+
+
+    const programForm =
+        document.getElementById("programForm");
+
+    if (programForm && !programForm.dataset.ready) {
+
+        programForm.dataset.ready = "true";
+
+        programForm.addEventListener(
+            "submit",
+            saveProgram
+        );
+    }
+
+
+    const refreshProgramsBtn =
+        document.getElementById("refreshProgramsBtn");
+
+    if (
+        refreshProgramsBtn &&
+        !refreshProgramsBtn.dataset.ready
+    ) {
+
+        refreshProgramsBtn.dataset.ready = "true";
+
+        refreshProgramsBtn.addEventListener(
+            "click",
+            loadPrograms
+        );
+    }
+
+
+    const cancelProgramEditBtn =
+        document.getElementById(
+            "cancelProgramEditBtn"
+        );
+
+    if (
+        cancelProgramEditBtn &&
+        !cancelProgramEditBtn.dataset.ready
+    ) {
+
+        cancelProgramEditBtn.dataset.ready = "true";
+
+        cancelProgramEditBtn.addEventListener(
+            "click",
+            resetProgramForm
+        );
+    }
+}
+
+
+
 /* =========================================================
    BLOOD DONOR MANAGEMENT
 ========================================================= */
@@ -6473,6 +7885,14 @@ function switchSection(
     );
 
 
+    if (section === "stats") {
+        loadContentStats();
+    }
+
+    if (section === "programs") {
+        loadPrograms();
+    }
+
     if (section === "help") {
         loadHelpRequests();
     }
@@ -6716,6 +8136,8 @@ function escapeHtml(
 /* =========================================================
    AUTO LOGIN
 ========================================================= */
+
+setupContentManagement();
 
 const existingToken =
     localStorage.getItem(
