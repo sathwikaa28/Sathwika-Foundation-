@@ -8,6 +8,7 @@ const contactRoutes = require("./routes/contactRoutes");
 const helpRoutes = require("./routes/helpRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const bloodRoutes = require("./routes/bloodRoutes");
+const contentRoutes = require("./routes/contentRoutes");
 
 const app = express();
 
@@ -41,6 +42,9 @@ app.use("/api/admin", adminRoutes);
 
 // Blood Donor API
 app.use("/api/blood", bloodRoutes);
+
+// Website Content API
+app.use("/api/content", contentRoutes);
 
 // =====================================================
 // TEST ROUTE
@@ -95,4 +99,3 @@ app.get("/api/db-test", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Backend running on http://localhost:${PORT}`);
 });
-
