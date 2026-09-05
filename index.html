@@ -34,6 +34,14 @@
     <link rel="stylesheet"
         href="styles.css">
 
+<style>
+.gallery-preview-section { padding: 80px 20px; }
+.gallery-preview-section .section-heading { max-width: 760px; margin: 0 auto; text-align: center; }
+@media (max-width: 600px) {
+    .gallery-preview-section { padding: 60px 16px; }
+}
+</style>
+
 </head>
 
 
@@ -814,6 +822,30 @@
 
 
 <!-- =====================================================
+     LATEST GALLERY
+===================================================== -->
+
+<section class="gallery-preview-section" id="latestGallery">
+
+    <div class="section-heading">
+        <div class="section-label">FROM OUR WORK</div>
+        <h2>Latest <span>Moments.</span></h2>
+        <p>Recent moments from our programs and community initiatives.</p>
+    </div>
+
+    <div id="galleryContainer"
+         style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:40px;">
+        <p id="galleryLoading" style="text-align:center;grid-column:1/-1;">Gallery updates will appear here soon.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:28px;">
+        <a href="./gallery.html" class="text-link">View Full Gallery →</a>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
      SUPPORT OUR MISSION
 ===================================================== -->
 
@@ -1180,15 +1212,21 @@ async function loadWebsiteContent() {
 
             if (stats.people_helped !== undefined) {
 
-                document.getElementById("peopleHelpedStat").textContent =
-                    Number(stats.people_helped).toLocaleString() + "+";
+                animateWebsiteNumber(
+                    document.getElementById("peopleHelpedStat"),
+                    Number(stats.people_helped),
+                    "+"
+                );
 
             }
 
             if (stats.programs_completed !== undefined) {
 
-                document.getElementById("programsCompletedStat").textContent =
-                    Number(stats.programs_completed).toLocaleString();
+                animateWebsiteNumber(
+                    document.getElementById("programsCompletedStat"),
+                    Number(stats.programs_completed),
+                    "+"
+                );
 
             }
 
@@ -1197,8 +1235,11 @@ async function loadWebsiteContent() {
                 Number(stats.volunteers) > 0
             ) {
 
-                document.getElementById("volunteersStat").textContent =
-                    Number(stats.volunteers).toLocaleString() + "+";
+                animateWebsiteNumber(
+                    document.getElementById("volunteersStat"),
+                    Number(stats.volunteers),
+                    "+"
+                );
 
             }
 
@@ -1243,8 +1284,16 @@ async function loadWebsiteContent() {
         }
 
 
+        const latestPrograms = programs
+            .slice()
+            .sort(function(a, b) {
+                return new Date(b.created_at || b.program_date || 0) -
+                       new Date(a.created_at || a.program_date || 0);
+            })
+            .slice(0, 3);
+
         programsContainer.innerHTML =
-            programs.map(function(program) {
+            latestPrograms.map(function(program) {
 
                 const title =
                     escapeWebsiteHTML(program.title || "Foundation Program");
@@ -1348,6 +1397,82 @@ async function loadWebsiteContent() {
 }
 
 
+async function loadWebsiteGallery() {
+
+    const galleryContainer =
+        document.getElementById("galleryContainer");
+
+    if (!galleryContainer) return;
+
+    try {
+
+        const response =
+            await fetch(CONTENT_API + "/gallery");
+
+        if (!response.ok) {
+            return;
+        }
+
+        const result = await response.json();
+
+        const gallery =
+            Array.isArray(result)
+                ? result
+                : (result.data || result.gallery || []);
+
+        if (!gallery.length) return;
+
+        galleryContainer.innerHTML =
+            gallery.slice(0, 6).map(function(item) {
+
+                const imageUrl =
+                    escapeWebsiteAttribute(item.image_url || "");
+
+                const caption =
+                    escapeWebsiteHTML(item.caption || "Sathwika Foundation");
+
+                if (!imageUrl) return "";
+
+                return `
+                    <figure style="margin:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.08);">
+                        <img src="${imageUrl}" alt="${caption}" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block;">
+                        <figcaption style="padding:14px 16px;line-height:1.5;">${caption}</figcaption>
+                    </figure>
+                `;
+
+            }).join("");
+
+    } catch (error) {
+        console.info("Gallery API is not available yet.");
+    }
+
+}
+
+
+function animateWebsiteNumber(element, target, suffix) {
+
+    if (!element || !Number.isFinite(target)) return;
+
+    const duration = 900;
+    const start = performance.now();
+
+    function frame(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.round(target * eased);
+
+        element.textContent = value.toLocaleString() + (suffix || "");
+
+        if (progress < 1) {
+            requestAnimationFrame(frame);
+        }
+    }
+
+    requestAnimationFrame(frame);
+
+}
+
+
 function escapeWebsiteHTML(value) {
 
     return String(value)
@@ -1369,7 +1494,10 @@ function escapeWebsiteAttribute(value) {
 
 document.addEventListener(
     "DOMContentLoaded",
-    loadWebsiteContent
+    function() {
+        loadWebsiteContent();
+        loadWebsiteGallery();
+    }
 );
 
 </script>
